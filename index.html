@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PlantCare</title>
+    <link rel="stylesheet" href="style.css">
+    <title>PlantCare - Plant Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body><nav class="navbar">
+    <h2>🌿 GreenScan</h2>
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#plants">Plants</a>
+        <a href="#scanner">Scan</a>
+        <a href="#reminder">Reminder</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+    <h1>🌿 PlantCare</h1>
+    <h2>Your Smart Plant Care Guide</h2>
+    <p>
+        Discover your plant and learn how to take care of it.
+    </p>
+<input type="text" id="searchBox" placeholder="Search plant...">
+<button onclick="searchPlant()">🔍 Search Plant</button>
+<div id="result"></div>
+<h2>📷 Scan Plant</h2>
+<input type="file" id="plantImage" accept="image/*" capture="environment">
+
+<button onclick="identifyPlant()">🔍 Identify Plant</button>
+
+<div id="preview"></div>
+<h2>🌱 Explore Plants</h2>
+<div class="categories">
+    <button onclick="showCategory('all')">All</button>
+    <button onclick="showCategory('indoor')">Indoor</button>
+    <button onclick="showCategory('flower')">Flowering</button>
+    <button onclick="showCategory('medicinal')">Medicinal</button>
+</div>
+<div id="plantCards">
+    <div class="plant-card indoor">
+        <div class="plant-icon">🌿</div>
+        <div class="plant-card">
+    <h3>🌵 Cactus</h3>
+    <p>Low-water plant</p>
+    <button onclick="showDetails('cactus')">View Details</button>
+</div>
+<div class="plant-card">
+    <h3>🌺 Hibiscus</h3>
+    <p>Beautiful flowering plant</p>
+    <button onclick="showDetails('hibiscus')">View Details</button>
+</div>
+<div class="plant-card">
+    <h3>🌻 Sunflower</h3>
+    <p>Bright flowering plant</p>
+    <button onclick="showDetails('sunflower')">View Details</button>
+</div>
+<div class="plant-card">
+    <h3>🌼 Jasmine</h3>
+    <p>Fragrant flowering plant</p>
+    <button onclick="showDetails('jasmine')">View Details</button>
+</div>
+<div class="plant-card">
+    <h3>🌿 Money Plant</h3>
+    <p>Popular indoor plant</p>
+    <button onclick="showDetails('moneyplant')">View Details</button>
+</div>
+<div class="plant-card">
+    <h3>🌳 Neem</h3>
+    <p>Useful medicinal tree</p>
+    <button onclick="showDetails('neem')">View Details</button>
+</div>
+<div class="plant-card">
+    <h3>🥭 Mango</h3>
+    <p>Popular fruit plant</p>
+    <button onclick="showDetails('mango')">View Details</button>
+</div>
+<div class="plant-card">
+    <h3>🍋 Lemon</h3>
+    <p>Useful fruit plant</p>
+    <button onclick="showDetails('lemon')">View Details</button>
+</div>
+<div class="plant-card">
+    <h3>🍈 Guava</h3>
+    <p>Popular fruit plant</p>
+    <button onclick="showDetails('guava')">View Details</button>
+</div>
+<div class="plant-card">
+    <h3>🍌 Banana</h3>
+    <p>Popular fruit plant</p>
+    <button onclick="showDetails('banana')">View Details</button>
+</div>
+<div class="plant-card">
+    <h3>🍊 Papaya</h3>
+    <p>Popular fruit plant</p>
+    <button onclick="showDetails('papaya')">View Details</button>
+</div>
+<div class="plant-card">
+    <h3>🥥 Coconut</h3>
+    <p>Tropical fruit plant</p>
+    <button onclick="showDetails('coconut')">View Details</button>
+</div>
+<div class="plant-card">
+    <h3>🌿 Mint</h3>
+    <p>Fresh herb plant</p>
+    <button onclick="showDetails('mint')">View Details</button>
+</div>
+<div class="plant-card">
+    <h3>🍅 Tomato</h3>
+    <p>Common vegetable plant</p>
+    <button onclick="showDetails('tomato')">View Details</button>
+</div>
+<div class="plant-card">
+    <h3>🥔 Potato</h3>
+    <p>Common vegetable crop</p>
+    <button onclick="showDetails('potato')">View Details</button>
+</div>
+<div class="plant-card">
+    <h3>🥕 Carrot</h3>
+    <p>Root vegetable plant</p>
+    <button onclick="showDetails('carrot')">View Details</button>
+</div>
+<div class="plant-card">
+    <h3>🧅 Onion</h3>
+    <p>Common vegetable crop</p>
+    <button onclick="showDetails('onion')">View Details</button>
+</div>
+<div class="plant-card">
+    <h3>🌶️ Chilli</h3>
+    <p>Common vegetable plant</p>
+    <button onclick="showDetails('chilli')">View Details</button>
+</div>
+<div class="plant-card">
+    <h3>🌿 Ashwagandha</h3>
+    <p>Medicinal plant</p>
+    <button onclick="showDetails('ashwagandha')">View Details</button>
+</div>
+<div class="plant-card">
+    <h3>🌿 Turmeric (Haldi)</h3>
+    <p>Medicinal plant</p>
+    <button onclick="showDetails('turmeric')">View Details</button>
+</div>
+<div class="plant-card">
+    <h3>🌿 Ginger (Adrak)</h3>
+    <p>Medicinal plant</p>
+    <button onclick="showDetails('ginger')">View Details</button>
+</div>
+        <h3>Aloe Vera</h3>
+        <p>☀️ Bright sunlight</p>
+        <p>💧 Water when soil is dry</p>
+        <button onclick="showDetails('Aloe Vera')">View Details</button>
+        <div id="details"></div>
+    </div>
+    <div class="plant-card flower">
+        <div class="plant-icon">🌹</div>
+        <h3>Rose</h3>
+        <p>☀️ Full sunlight</p>
+        <p>💧 Regular watering</p>
+        <button onclick="showDetails('Rose')">View Details</button>
+    </div>
+    <div class="plant-card indoor">
+        <div class="plant-icon">🌱</div>
+        <h3>Snake Plant</h3>
+        <p>☀️ Low to bright light</p>
+        <p>💧 Less frequent watering</p>
+        <button onclick="showDetails('Snake Plant')">View Details</button>
+    </div>
+    <div class="plant-card medicinal">
+        <div class="plant-icon">🌿</div>
+        <h3>Tulsi</h3>
+        <p>☀️ Good sunlight</p>
+        <p>💧 Regular watering</p>
+        <button onclick="showDetails('Tulsi')">View Details</button>
+    </div>
+</div>
+<div id="details"></div>
+<h2>📷 Scan Your Plant</h2>
+<p>Take a photo or choose a plant image.</p>
+<input 
+    type="file" 
+    id="plantImage" 
+    accept="image/*" 
+    capture="environment"
+    onchange="previewPlant()"
+>
+<div id="imagePreview"></div>
+<button onclick="identifyPlant()">🤖 Identify Plant</button>
+<div id="scanResult"></div>
+<h2>💧 Watering Reminder</h2>
+<p>Select your next watering date:</p>
+<input type="date" id="wateringDate">
+<button onclick="setReminder()">Set Reminder</button>
+<div id="reminderResult"></div>
+<script src="script.js"></script>
+</body>
+</html>
